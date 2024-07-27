@@ -23,7 +23,6 @@ The ESP-32 Drone project integrates an ESP-32 microcontroller with a drone to al
 - **Propellers**
 - **Custom built ESC:** The Electronic speed controller was custom built to be able to control the 720 micro coreless motor
 - **3.7V li-po battery**
-- 
 
 ## Code Files
 
