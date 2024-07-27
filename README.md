@@ -1,26 +1,39 @@
-# ESP-32-Drone
-Sure! Here’s a README template for your GitHub repository:
-
----
-
 # ESP-32 Drone
 
-This repository contains the code and documentation for controlling a drone using an ESP-32 microcontroller. The project allows remote control of the drone via a web interface.
+This repository hosts the code and configuration for controlling a drone using an ESP-32 microcontroller. The project enables remote control and monitoring through a web-based interface.
+
+## Overview
+
+The ESP-32 Drone project integrates an ESP-32 microcontroller with a drone to allow remote control via a web interface. The system includes features for real-time communication and control, and it provides a user-friendly interface accessible from any device with a web browser.
 
 ## Features
 
-- **Web-based Control:** Operate the drone from any device with a web browser.
-- **ESP-32 Integration:** Utilize the ESP-32 microcontroller for real-time control and communication.
-- **Customizable:** Easily modify and extend the functionality to suit specific needs.
+- **Web-based Control Interface:** Provides remote control and monitoring of the drone through a web interface.
+- **ESP-32 Integration:** Utilizes the ESP-32 microcontroller for efficient control and communication with the drone.
+- **Real-time Alerts:** Sends real-time notifications to mobile devices in case of critical events or statuses.
+- **Customizable Commands:** Allows for various drone operations including takeoff, landing, and directional movement.
 
-## Components
+## Hardware Components
 
-- **ESP-32 Microcontroller**
-- **Drone (compatible with ESP-32)**
-- **Web Interface for control**
-- **Additional components as per drone requirements**
+- **ESP-32 Microcontroller:** The central control unit for interfacing with the drone and handling web communications.
+- **MPU 6050 accelerometer:**  Measures acceleration in three axes, providing data for motion and orientation detection.
+- **HMC5883L magnetic compass:** Measures magnetic field strength in three axes, helping determine the drone's heading and orientation.
+- **tp4056 USB-C charging module**
+- **720 microcoreless motor**
+- **Propellers**
+- **Custom built ESC:** The Electronic speed controller was custom built to be able to control the 720 micro coreless motor
+- **3.7V li-po battery**
+- 
 
-## Installation
+## Code Files
+
+- **`main.cpp`**: Contains the core logic for initializing the ESP-32, connecting to Wi-Fi, and managing drone operations. It includes setup and loop functions that handle web server requests and control commands.
+
+- **`web_server.cpp`**: Implements the web server functionality. It processes incoming HTTP requests, updates the drone status, and sends control commands based on user inputs from the web interface.
+
+- **`config.h`**: Configuration file containing network settings and other parameters essential for ESP-32 setup and operation. It includes Wi-Fi credentials and server settings.
+
+## Getting Started
 
 1. **Clone the Repository:**
 
@@ -28,54 +41,19 @@ This repository contains the code and documentation for controlling a drone usin
    git clone https://github.com/JRanjithSharan/ESP-32-Drone.git
    ```
 
-2. **Install Dependencies:**
+2. **Configure the ESP-32:**
 
-   Make sure you have the ESP-IDF or Arduino IDE set up for ESP-32 development. Install the necessary libraries and dependencies as specified in the code.
+   Modify `config.h` to include your network settings and other configuration details.
 
-3. **Upload Code to ESP-32:**
+3. **Upload Code:**
 
-   Connect the ESP-32 to your computer and upload the code using your preferred development environment (ESP-IDF or Arduino IDE).
+   Use your preferred development environment (ESP-IDF or Arduino IDE) to upload the code to the ESP-32.
 
-4. **Configure Network Settings:**
+4. **Access the Web Interface:**
 
-   Update the network settings in the code to match your Wi-Fi configuration. This ensures the ESP-32 can connect to your local network and communicate with the web interface.
+   After uploading, connect the ESP-32 to your network. Access the web interface by navigating to the ESP-32's IP address in your web browser.
 
 ## Usage
 
-1. **Access the Web Interface:**
+The web interface allows you to control the drone’s movements, including takeoff, landing, and directional adjustments. The web interface is still under development, and further changes will be updated
 
-   Once the ESP-32 is connected to the network, access the web interface by navigating to the ESP-32’s IP address in your web browser.
-
-2. **Control the Drone:**
-
-   Use the web interface to send commands and control the drone’s movements. The interface allows for various operations, including takeoff, landing, and directional control.
-
-## Code Structure
-
-- **`main.cpp`**: Contains the main control logic for the ESP-32 and drone communication.
-- **`web_server.cpp`**: Manages the web server and handles incoming commands from the web interface.
-- **`config.h`**: Configuration file for network settings and other parameters.
-
-## Troubleshooting
-
-- **ESP-32 Not Connecting to Wi-Fi:** Ensure the network settings in `config.h` are correct and that the ESP-32 is within range of your Wi-Fi network.
-- **Web Interface Not Loading:** Check that the ESP-32 is properly connected to the network and that the IP address is correct.
-
-## Contributing
-
-Contributions are welcome! If you have suggestions or improvements, please fork the repository and submit a pull request. 
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- ESP-32 Development Team
-- Open-source libraries and frameworks used in this project
-
-For further details and updates, please refer to the repository and associated documentation.
-
----
-
-Feel free to adjust the details based on your specific project setup and requirements!
